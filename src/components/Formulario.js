@@ -28,8 +28,6 @@ const Formulario = ({ crearCita }) => {
   const submitCita = (e) => {
     e.preventDefault();
 
-    
-
     // Validar
     if (
       mascota.trim() === "" ||
@@ -47,7 +45,6 @@ const Formulario = ({ crearCita }) => {
     // Asignar un ID
     cita.id = uuid();
 
-    
     // Crear la cita
     crearCita(cita);
 
@@ -72,8 +69,9 @@ const Formulario = ({ crearCita }) => {
       ) : null}
 
       <form onSubmit={submitCita}>
-        <label>Nombre Mascota</label>
+        <label htmlFor="mascota">Nombre Mascota</label>
         <input
+          id="mascota"
           data-testid="mascota"
           type="text"
           name="mascota"
@@ -83,8 +81,9 @@ const Formulario = ({ crearCita }) => {
           value={mascota}
         />
 
-        <label>Nombre Dueño</label>
+        <label htmlFor="propietario">Nombre Dueño</label>
         <input
+          id="propietario"
           data-testid="propietario"
           type="text"
           name="propietario"
@@ -94,8 +93,9 @@ const Formulario = ({ crearCita }) => {
           value={propietario}
         />
 
-        <label>Fecha</label>
+        <label htmlFor="fecha">Fecha</label>
         <input
+          id="fecha"
           data-testid="fecha"
           type="date"
           name="fecha"
@@ -104,8 +104,9 @@ const Formulario = ({ crearCita }) => {
           value={fecha}
         />
 
-        <label>Hora</label>
+        <label htmlFor="hora">Hora</label>
         <input
+          id="hora"
           data-testid="hora"
           type="time"
           name="hora"
@@ -114,8 +115,9 @@ const Formulario = ({ crearCita }) => {
           value={hora}
         />
 
-        <label>Síntomas</label>
+        <label htmlFor="sintomas">Síntomas</label>
         <textarea
+          id="sintomas"
           data-testid="sintomas"
           className="u-full-width"
           name="sintomas"
@@ -126,7 +128,7 @@ const Formulario = ({ crearCita }) => {
         <button
           data-testid="btn-submit"
           type="submit"
-          className="u-full-width button-primary"
+          className="u-full-width button"
         >
           Agregar Cita
         </button>
